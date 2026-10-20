@@ -1,0 +1,479 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>تجربة العمل تحت الضغط</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- مكتبة الأيقونات -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- شعار الكلية -->
+    <header>
+        <img src="images/college-logo.png"
+             alt="شعار كلية الغد">
+
+        <h3>
+            كلية الغد للعلوم الطبية التطبيقية - فرع جدة
+        </h3>
+    </header>
+
+    <!-- الصفحة الرئيسية -->
+    <main id="homePage" class="page">
+
+        <h1>تجربة العمل تحت الضغط</h1>
+
+        <p>
+            لعبة تفاعلية لاختبار التركيز والانتباه
+            تحت الضغط.
+        </p>
+
+<button id="startBtn"
+        class="brain-image-button"
+        type="button"
+        aria-label="ابدأ اللعبة">
+
+    <img src="images/brain.png"
+         alt="مخ تفاعلي لبدء اللعبة"
+         class="brain-image">
+
+</button>
+</main>
+
+
+<!-- صفحة التعليمات -->
+<section id="instructionsPage" class="page hidden">
+
+    <div class="instructions-card">
+
+        <!-- رمز وعنوان التعليمات -->
+        <div class="instructions-heading">
+
+            <div class="instructions-icon">
+                <i class="fa-solid fa-clipboard-list"></i>
+            </div>
+
+            <h1>تعليمات اللعبة</h1>
+
+            <p class="intro">
+                اقرأ التعليمات واستعد لاختبار تركيزك!
+            </p>
+
+        </div>
+
+        <!-- معلومات سريعة عن اللعبة -->
+        <div class="game-info-grid">
+
+            <div class="game-info-box">
+                <i class="fa-solid fa-stopwatch"></i>
+                <strong>50 ثانية</strong>
+                <span>لكل تحدٍ مؤقت</span>
+            </div>
+
+            <div class="game-info-box">
+                <i class="fa-solid fa-layer-group"></i>
+                <strong>مستويان</strong>
+                <span>أرقام وأشكال</span>
+            </div>
+
+            <div class="game-info-box">
+                <i class="fa-solid fa-headphones"></i>
+                <strong>3 أرقام</strong>
+                <span>استماع وتذكّر</span>
+            </div>
+
+        </div>
+
+        <!-- التعليمات -->
+        <div class="instructions-rules">
+
+            <div class="rule">
+                <span>01</span>
+                <p>
+                    تتكون اللعبة من مستويين مختلفين
+                    في درجة الصعوبة.
+                </p>
+            </div>
+
+            <div class="rule">
+                <span>02</span>
+                <p>
+                    في المستوى الأول، ابحث عن الرقم
+                    المطلوب بين الأرقام العشوائية
+                    خلال 50 ثانية.
+                </p>
+            </div>
+
+            <div class="rule">
+                <span>03</span>
+                <p>
+                    في المستوى الثاني، ابحث عن الشكل
+                    المطلوب خلال 50 ثانية، ثم استمع
+                    إلى ثلاثة أرقام وسط الأصوات المشتتة.
+                </p>
+            </div>
+
+            <div class="rule">
+                <span>04</span>
+                <p>
+                    تذكّر الأرقام الثلاثة التي سمعتها،
+                    واكتبها بالترتيب الصحيح خلال
+                    50 ثانية.
+                </p>
+            </div>
+
+            <div class="rule">
+                <span>05</span>
+                <p>
+                    عند الخطأ أو انتهاء الوقت،
+                    ستعيد المستوى الحالي.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- زر الانتقال إلى الاستعداد -->
+        <button id="readyBtn"
+                class="icon-game-btn ready-next-btn"
+                type="button">
+
+            <span class="button-icon">
+                <i class="fa-solid fa-circle-check"></i>
+            </span>
+
+            <span class="button-label">
+                فهمت، أنا مستعد
+            </span>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- صفحة الاستعداد -->
+<section id="readyPage" class="page hidden">
+
+    <div class="ready-content">
+
+        <h1>هل أنت مستعد لبدء التحدي؟</h1>
+
+        <p>
+            ركّز جيدًا، فالوقت يبدأ
+            بمجرد الضغط على الصاروخ.
+        </p>
+
+        <button id="playBtn"
+                class="rocket-image-button"
+                type="button"
+                aria-label="ابدأ التحدي">
+
+            <img src="images/rocket.png"
+                 alt="صاروخ لبدء التحدي"
+                 class="rocket-image">
+
+        </button>
+
+        <p class="rocket-hint">
+        </p>
+
+    </div>
+
+</section>
+
+    <!-- المستوى الأول: تحدي الأرقام -->
+    <section id="levelOnePage" class="page hidden">
+
+        <div class="game-card">
+
+            <div class="game-header">
+
+                <span class="level-badge">
+                    المستوى الأول من 2
+                </span>
+
+                <div class="timer-box">
+                    <i class="fa-solid fa-stopwatch"></i>
+                    <span id="timer">50</span>
+                    ثانية
+                </div>
+
+            </div>
+
+            <h1>تحدي الأرقام</h1>
+
+            <p class="game-description">
+                ركّز جيدًا، وابحث عن الرقم المطلوب
+                قبل انتهاء الوقت!
+            </p>
+
+            <div class="target-box">
+                اضغط على الرقم
+                <strong id="targetNumber">؟</strong>
+            </div>
+
+            <div id="numbersGrid" class="numbers-grid">
+                <!-- تظهر الأرقام باستخدام JavaScript -->
+            </div>
+
+            <p id="gameMessage" class="game-message"></p>
+
+            <div class="progress-container">
+                <div id="timeProgress"
+                     class="time-progress"></div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- المستوى الثاني: تحدي الأشكال -->
+    <section id="levelTwoPage" class="page hidden">
+
+        <div class="game-card">
+
+            <div class="game-header">
+
+                <span class="level-badge">
+                    المستوى الثاني من 2
+                </span>
+
+                <div class="timer-box">
+                    <i class="fa-solid fa-stopwatch"></i>
+                    <span id="shapeTimer">50</span>
+                    ثانية
+                </div>
+
+            </div>
+
+            <h1>تحدي الأشكال</h1>
+
+            <p class="game-description">
+                ابحث عن الشكل المطلوب، واضغط عليه
+                قبل انتهاء الوقت!
+            </p>
+
+            <div class="target-box">
+                اضغط على الشكل:
+                <strong id="targetShape">؟</strong>
+            </div>
+
+            <div id="shapesGrid" class="shapes-grid">
+                <!-- تظهر الأشكال باستخدام JavaScript -->
+            </div>
+
+            <p id="shapeMessage" class="game-message"></p>
+
+            <div class="progress-container">
+                <div id="shapeTimeProgress"
+                     class="time-progress"></div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- صفحة الاستماع للأرقام -->
+    <section id="listeningPage" class="page hidden">
+
+        <div class="game-card audio-card">
+
+<!-- صورة السماعات في صفحة الاستماع -->
+<div class="audio-symbol headphones-container">
+
+    <img src="images/headphones.png"
+         alt="سماعات للاستماع إلى الأرقام"
+         class="headphones-image">
+
+</div>
+
+
+            <h1>استمع جيدًا!</h1>
+
+            <p>
+                ستسمع ثلاثة أرقام مع أصوات مشتتة.
+                حاول تذكّر الأرقام بالترتيب نفسه
+                الذي سمعتها به.
+            </p>
+
+            <div class="sound-animation">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <p id="listeningStatus">
+                جارٍ تجهيز الصوت...
+            </p>
+
+            <button id="retryAudioBtn"
+                    class="action-btn audio-retry-btn hidden"
+                    type="button">
+
+                <i class="fa-solid fa-headphones"></i>
+                تشغيل الصوت
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- صفحة اختبار الذاكرة -->
+    <section id="memoryPage" class="page hidden">
+
+        <div class="game-card memory-card">
+
+            <div class="game-header">
+
+                <span class="level-badge">
+                    المستوى الثاني من 2
+                </span>
+
+                <div class="timer-box">
+                    <i class="fa-solid fa-stopwatch"></i>
+                    <span id="memoryTimer">50</span>
+                    ثانية
+                </div>
+
+            </div>
+
+<!-- صورة البازل في صفحة اختبار الذاكرة -->
+<div class="memory-puzzle-container">
+
+    <img src="images/puzzle.png"
+         alt="قطع بازل ترمز إلى التذكر والتركيز"
+         class="memory-puzzle-image">
+
+</div>
+
+
+            <h1>اختبار الذاكرة</h1>
+
+            <p class="game-description">
+                ما الأرقام الثلاثة التي سمعتها؟
+                اكتبها بالترتيب الصحيح خلال 50 ثانية.
+            </p>
+
+            <form id="memoryForm">
+
+                <input
+                    type="text"
+                    id="memoryAnswer"
+                    inputmode="numeric"
+                    maxlength="3"
+                    autocomplete="off"
+                    placeholder="مثال: 425"
+                    aria-label="الأرقام الثلاثة التي سمعتها"
+                    required
+                >
+
+                <button type="submit"
+                        id="checkMemoryBtn"
+                        class="action-btn memory-check-btn">
+
+                    <i class="fa-solid fa-brain"></i>
+                    تحقق من الإجابة
+
+                </button>
+
+            </form>
+
+            <p id="memoryMessage"
+               class="game-message"></p>
+
+            <div class="progress-container">
+                <div id="memoryTimeProgress"
+                     class="time-progress"></div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- الصفحة النهائية -->
+    <section id="finalPage" class="page hidden">
+
+        <div class="game-card final-card">
+
+<!-- صورة الكأس في صفحة النهاية -->
+<div class="final-trophy-container">
+
+    <img src="images/trophy.png"
+         alt="كأس إتمام التحدي"
+         class="final-trophy-image">
+
+</div>
+
+
+            <h1>أحسنت! أنهيت التحدي</h1>
+
+            <p class="game-description">
+                الآن فكّر في تجربتك مع التركيز
+                وتعدّد المهام.
+            </p>
+
+            <div class="reflection-questions">
+
+                <h2>الأسئلة والملاحظات</h2>
+
+                <p>أي المهمتين كانت أسهل؟</p>
+
+                <p>هل شعرت بأن انتباهك توزّع؟</p>
+
+                <p>
+                    هل لاحظت زيادة الأخطاء
+                    أو احتجت إلى وقت أطول؟
+                </p>
+
+                <p>
+                    كيف يمكنك الاستفادة من هذه التجربة
+                    في تنظيم مهامك اليومية؟
+                </p>
+
+            </div>
+
+            <div class="awareness-message">
+
+                <h2>رسالة توعوية</h2>
+
+                <p>
+                    تعدّد المهام قد يزيد الحمل الذهني
+                    ويؤثر في الأداء، لكن مقدار التأثير
+                    يختلف باختلاف المهمة والشخص.
+                    ولذلك، لا بد من ترتيب أولويات
+                    المهام والأنشطة؛ لتسهيل إنجازها.
+                </p>
+
+            </div>
+
+            <button id="restartGameBtn"
+                    class="action-btn restart-btn"
+                    type="button">
+
+                <i class="fa-solid fa-rotate-right"></i>
+                إعادة التجربة
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

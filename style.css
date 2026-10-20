@@ -1,0 +1,1477 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap');
+
+/* إعدادات عامة */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+    min-height: 100vh;
+    background: linear-gradient(
+        135deg,
+        #eef8ff 0%,
+        #f5f0ff 50%,
+        #e0f3f5 100%
+    );
+    color: #183b56;
+}
+
+/* شعار الكلية */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    padding: 20px 5%;
+}
+
+header img {
+    width: 90px;
+    height: auto;
+    object-fit: contain;
+}
+
+header h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #183b56;
+}
+
+/* إخفاء الصفحات غير النشطة */
+.hidden {
+    display: none !important;
+}
+
+/* الصفحة الرئيسية */
+main {
+    min-height: calc(100vh - 140px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+main h1 {
+    font-size: clamp(32px, 5vw, 60px);
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: #174e65;
+}
+
+main p {
+    font-size: 19px;
+    color: #607d8b;
+    margin-bottom: 25px;
+}
+
+/* =====================================
+   زر صورة المخ في الصفحة الرئيسية
+===================================== */
+
+#startBtn,
+.brain-image-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+    height: auto;
+
+    margin: 0 auto;
+    padding: 0;
+
+    background: transparent !important;
+    background-image: none !important;
+
+    border: none !important;
+    border-radius: 0;
+
+    box-shadow: none !important;
+    outline-offset: 8px;
+
+    cursor: pointer;
+
+    transition: transform 0.3s ease;
+}
+
+/* حجم صورة المخ */
+#startBtn .brain-image,
+.brain-image-button .brain-image {
+    display: block;
+
+    width: 190px;
+    max-width: 55vw;
+    height: auto;
+
+    object-fit: contain;
+
+    border: none;
+    border-radius: 0;
+
+    background: transparent;
+    box-shadow: none;
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+/* حركة عند مرور الماوس */
+#startBtn:hover,
+.brain-image-button:hover {
+    transform: translateY(-5px);
+}
+
+#startBtn:hover .brain-image,
+.brain-image-button:hover .brain-image {
+    transform: scale(1.07);
+    filter: drop-shadow(
+        0 10px 15px rgba(83, 151, 190, 0.2)
+    );
+}
+
+/* حركة الضغط */
+#startBtn:active,
+.brain-image-button:active {
+    transform: scale(0.94);
+}
+
+#startBtn:active .brain-image,
+.brain-image-button:active .brain-image {
+    transform: scale(0.94);
+}
+
+/* إظهار التركيز عند استخدام لوحة المفاتيح */
+#startBtn:focus-visible {
+    outline: 3px solid #168d9b;
+    border-radius: 15px;
+}
+
+/* =====================================
+   صفحة التعليمات
+===================================== */
+
+#instructionsPage {
+    min-height: calc(100vh - 140px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+.instructions-card {
+    background: rgba(255, 255, 255, 0.88);
+    width: 100%;
+    max-width: 650px;
+    padding: 35px;
+    border-radius: 25px;
+    box-shadow: 0 15px 45px rgba(35, 77, 112, 0.10);
+}
+
+.instructions-card h1 {
+    text-align: center;
+    font-size: 32px;
+    color: #174e65;
+    margin-bottom: 15px;
+}
+
+.intro {
+    text-align: center;
+    color: #607d8b;
+    margin-bottom: 25px;
+}
+
+.rule {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #f1f8fc;
+    padding: 15px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+}
+
+.rule span {
+    background: #176b78;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.rule p {
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* أزرار التعليمات والاستعداد */
+#readyBtn,
+#playBtn {
+    display: block;
+    margin: 25px auto 0;
+
+    background: linear-gradient(
+        135deg,
+        #176b78,
+        #234d70
+    );
+
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 14px 35px;
+
+    font-family: 'Cairo', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#readyBtn:hover,
+#playBtn:hover {
+    transform: translateY(-3px);
+}
+
+#readyBtn:active,
+#playBtn:active {
+    transform: scale(0.96);
+}
+
+/* =====================================
+   صفحة الاستعداد
+===================================== */
+
+#readyPage {
+    min-height: calc(100vh - 140px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 25px;
+}
+
+.ready-content h1 {
+    font-size: clamp(30px, 5vw, 50px);
+    color: #174e65;
+}
+
+.ready-content p {
+    color: #607d8b;
+    margin-top: 15px;
+}
+
+#playBtn {
+    padding: 17px 65px;
+    font-size: 24px;
+}
+
+/* إذا كان زر الاستعداد يحتوي أيقونة مخ */
+.brain-start-btn {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.brain-start-btn .brain-icon {
+    font-size: 65px;
+    line-height: 1.2;
+}
+
+.brain-start-btn .brain-label {
+    font-size: 20px;
+}
+
+.brain-hint {
+    font-size: 14px;
+}
+
+/* =====================================
+   المستوى الأول: تحدي الأرقام
+===================================== */
+
+#levelOnePage {
+    min-height: calc(100vh - 140px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+.game-card {
+    background: rgba(255, 255, 255, 0.92);
+    width: 100%;
+    max-width: 750px;
+    padding: 35px;
+    border-radius: 25px;
+    box-shadow: 0 15px 45px rgba(35, 77, 112, 0.12);
+    text-align: center;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.level-badge {
+    background: #e1f3f4;
+    color: #176b78;
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.timer-box {
+    background: #fff0ef;
+    color: #c34b4b;
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+.game-card h1 {
+    font-size: 32px;
+    color: #174e65;
+    margin-bottom: 10px;
+}
+
+.game-description {
+    color: #607d8b;
+    margin-bottom: 25px;
+}
+
+.target-box {
+    background: #eaf5f7;
+    color: #174e65;
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.target-box strong {
+    color: #168d9b;
+    font-size: 32px;
+    margin-right: 10px;
+}
+
+.numbers-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.number-btn {
+    aspect-ratio: 1;
+    border: 2px solid #dcebf1;
+    border-radius: 15px;
+    background: #f4faff;
+    color: #174e65;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.number-btn:hover {
+    background: #d8f2f3;
+    border-color: #168d9b;
+    transform: scale(1.06);
+}
+
+.number-btn:disabled {
+    cursor: default;
+}
+
+.game-message {
+    min-height: 30px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.progress-container {
+    width: 100%;
+    height: 9px;
+    background: #e5edf1;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.time-progress {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+        90deg,
+        #176b78,
+        #42b7b4
+    );
+    transition: width 1s linear;
+}
+
+/* =====================================
+   المستوى الثاني: تحدي الأشكال
+===================================== */
+
+#levelTwoPage {
+    min-height: calc(100vh - 140px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+.shapes-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.shape-btn {
+    aspect-ratio: 1;
+    background: #f4faff;
+    border: 2px solid #dcebf1;
+    border-radius: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.shape-btn:hover {
+    background: #e0f5f4;
+    border-color: #168d9b;
+    transform: scale(1.06);
+}
+
+.shape-btn:disabled {
+    cursor: default;
+}
+
+/* الأشكال الهندسية */
+.shape {
+    display: block;
+    width: 46px;
+    height: 46px;
+}
+
+.shape.circle {
+    background: #87c9d7;
+    border-radius: 50%;
+}
+
+.shape.square {
+    background: #9b9bd7;
+    border-radius: 6px;
+}
+
+.shape.rectangle {
+    width: 55px;
+    height: 32px;
+    background: #e7ad8d;
+    border-radius: 5px;
+}
+
+.shape.triangle {
+    width: 0;
+    height: 0;
+
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 46px solid #73b9a6;
+}
+
+/* =====================================
+   صفحات الصوت والذاكرة والنهاية
+===================================== */
+
+#listeningPage,
+#memoryPage,
+#finalPage {
+    min-height: calc(100vh - 140px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+.audio-card,
+.memory-card,
+.final-card {
+    max-width: 680px;
+}
+
+.audio-symbol,
+.final-icon {
+    font-size: 65px;
+    margin-bottom: 15px;
+}
+
+.audio-card > p {
+    color: #607d8b;
+    line-height: 2;
+}
+
+#listeningStatus {
+    margin-top: 25px;
+    font-weight: bold;
+    color: #176b78;
+}
+
+/* حركة الصوت */
+.sound-animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    height: 90px;
+    margin-top: 25px;
+}
+
+.sound-animation span {
+    width: 9px;
+    height: 25px;
+    background: #67b8c2;
+    border-radius: 20px;
+
+    animation: soundWave 0.9s ease-in-out infinite;
+    animation-play-state: paused;
+}
+
+.sound-animation.playing span {
+    animation-play-state: running;
+}
+
+.sound-animation span:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.sound-animation span:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.sound-animation span:nth-child(4) {
+    animation-delay: 0.45s;
+}
+
+.sound-animation span:nth-child(5) {
+    animation-delay: 0.6s;
+}
+
+@keyframes soundWave {
+    0%, 100% {
+        height: 20px;
+    }
+
+    50% {
+        height: 65px;
+    }
+}
+
+/* =====================================
+   اختبار الذاكرة
+===================================== */
+
+#memoryForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    margin: 25px 0;
+}
+
+#memoryAnswer {
+    width: 220px;
+    max-width: 100%;
+    padding: 16px;
+
+    text-align: center;
+    direction: ltr;
+
+    font-family: 'Cairo', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 8px;
+
+    border: 2px solid #c9e4e8;
+    border-radius: 15px;
+    outline: none;
+
+    background: #f7fcff;
+    color: #174e65;
+}
+
+#memoryAnswer:focus {
+    border-color: #168d9b;
+    box-shadow: 0 0 0 4px rgba(22, 141, 155, 0.1);
+}
+
+/* الأزرار العامة */
+.action-btn {
+    background: linear-gradient(
+        135deg,
+        #176b78,
+        #234d70
+    );
+
+    color: white;
+    border: none;
+    padding: 14px 35px;
+    border-radius: 50px;
+
+    font-family: 'Cairo', sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.action-btn:hover {
+    transform: translateY(-3px);
+}
+
+.action-btn:active {
+    transform: scale(0.96);
+}
+
+.action-btn:disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+
+/* =====================================
+   الصفحة النهائية
+===================================== */
+
+.final-card h1 {
+    color: #176b78;
+}
+
+.reflection-questions,
+.awareness-message {
+    background: #f1f8fc;
+    padding: 22px;
+    border-radius: 18px;
+    margin: 20px 0;
+    text-align: right;
+}
+
+.reflection-questions h2,
+.awareness-message h2 {
+    font-size: 20px;
+    color: #174e65;
+    margin-bottom: 15px;
+}
+
+.reflection-questions p {
+    background: white;
+    padding: 12px 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: #345b70;
+}
+
+.awareness-message {
+    background: #e8f5f1;
+}
+
+.awareness-message p {
+    color: #345b70;
+    line-height: 2.2;
+}
+
+#restartGameBtn {
+    margin-top: 15px;
+}
+
+/* =====================================
+   تصميم الجوال
+===================================== */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 15px;
+        gap: 10px;
+    }
+
+    header img {
+        width: 65px;
+    }
+
+    header h3 {
+        font-size: 11px;
+    }
+
+    main p {
+        font-size: 15px;
+    }
+
+    main h1 {
+        font-size: 32px;
+    }
+
+    /* تصغير المخ على الجوال */
+    #startBtn .brain-image,
+    .brain-image-button .brain-image {
+        width: 150px;
+        max-width: 55vw;
+    }
+
+    .instructions-card {
+        padding: 22px;
+    }
+
+    .instructions-card h1 {
+        font-size: 25px;
+    }
+
+    .rule p {
+        font-size: 13px;
+    }
+
+    .game-card {
+        padding: 20px;
+    }
+
+    .numbers-grid,
+    .shapes-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+    }
+
+    .number-btn {
+        font-size: 20px;
+    }
+
+    .game-card h1 {
+        font-size: 25px;
+    }
+
+    .target-box {
+        font-size: 16px;
+    }
+
+    .shape {
+        transform: scale(0.75);
+    }
+
+    .audio-symbol,
+    .final-icon {
+        font-size: 50px;
+    }
+
+    .reflection-questions,
+    .awareness-message {
+        padding: 15px;
+    }
+}
+
+/* احترام إعدادات تقليل الحركة */
+@media (prefers-reduced-motion: reduce) {
+    #startBtn,
+    #startBtn .brain-image {
+        transition: none;
+    }
+}
+
+
+/* =====================================
+   زر الصاروخ في صفحة الاستعداد
+===================================== */
+
+#playBtn.rocket-image-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+    height: auto;
+
+    margin: 18px auto 0;
+    padding: 0;
+
+    background: transparent;
+    background-image: none;
+
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+
+    cursor: pointer;
+
+    transition: transform 0.25s ease;
+}
+
+/* حجم صورة الصاروخ */
+.rocket-image {
+    display: block;
+
+    width: 210px;
+    max-width: 60vw;
+    height: auto;
+
+    object-fit: contain;
+    background: transparent;
+
+    filter: drop-shadow(
+        0 8px 12px rgba(71, 159, 206, 0.15)
+    );
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+/* عند مرور الماوس */
+#playBtn.rocket-image-button:hover {
+    transform: translateY(-8px);
+}
+
+#playBtn.rocket-image-button:hover .rocket-image {
+    filter: drop-shadow(
+        0 15px 18px rgba(71, 159, 206, 0.3)
+    );
+}
+
+/* عند الضغط */
+#playBtn.rocket-image-button:active {
+    transform: translateY(-3px) scale(0.92);
+}
+
+/* النص أسفل الصاروخ */
+.rocket-hint {
+    margin-top: 8px;
+    font-size: 15px;
+    color: #527d95;
+    text-align: center;
+}
+
+/* حجم الصاروخ على الجوال */
+@media (max-width: 600px) {
+    .rocket-image {
+        width: 165px;
+        max-width: 55vw;
+    }
+}
+
+/* تقليل الحركة عند طلب المستخدم */
+@media (prefers-reduced-motion: reduce) {
+    #playBtn.rocket-image-button,
+    .rocket-image {
+        transition: none;
+    }
+}
+
+
+/* ========================================
+   التصميم الجديد لصفحة التعليمات
+======================================== */
+
+/* البطاقة الرئيسية */
+#instructionsPage .instructions-card {
+    width: 100%;
+    max-width: 720px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 28px;
+    box-shadow: 0 12px 35px rgba(30, 92, 124, 0.08);
+}
+
+/* العنوان */
+.instructions-heading {
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+/* رمز لوحة التعليمات */
+.instructions-icon {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #e7f6fc;
+    color: #329cba;
+    border-radius: 22px;
+
+    font-size: 34px;
+
+    animation: instructionsIconFloat 3s ease-in-out infinite;
+}
+
+@keyframes instructionsIconFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.instructions-heading h1 {
+    margin-bottom: 8px;
+    color: #174e65;
+}
+
+.instructions-heading .intro {
+    margin-bottom: 0;
+    color: #68869b;
+}
+
+/* البطاقات الثلاث الصغيرة */
+.game-info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.game-info-box {
+    min-width: 0;
+    padding: 16px 8px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    text-align: center;
+    background: #eaf7fb;
+    border: 1px solid #d8eef5;
+    border-radius: 16px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.game-info-box i {
+    font-size: 26px;
+    color: #2697b3;
+}
+
+.game-info-box strong {
+    color: #174e65;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.game-info-box span {
+    color: #68869b;
+    font-size: 12px;
+}
+
+.game-info-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(38, 151, 179, 0.12);
+}
+
+/* التعليمات الخمس */
+.instructions-rules {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#instructionsPage .rule {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin: 0;
+    padding: 13px 15px;
+
+    background: #f1f8fb;
+    border-radius: 14px;
+
+    animation: ruleAppear 0.5s ease both;
+}
+
+#instructionsPage .rule:nth-child(1) {
+    animation-delay: 0.08s;
+}
+
+#instructionsPage .rule:nth-child(2) {
+    animation-delay: 0.16s;
+}
+
+#instructionsPage .rule:nth-child(3) {
+    animation-delay: 0.24s;
+}
+
+#instructionsPage .rule:nth-child(4) {
+    animation-delay: 0.32s;
+}
+
+#instructionsPage .rule:nth-child(5) {
+    animation-delay: 0.40s;
+}
+
+@keyframes ruleAppear {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* أرقام التعليمات */
+#instructionsPage .rule > span {
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+    padding: 0;
+
+    background: #176b78;
+    color: white;
+    border-radius: 12px;
+
+    font-size: 15px;
+    font-weight: 800;
+}
+
+/* نص التعليمات */
+#instructionsPage .rule p {
+    flex: 1;
+    margin: 0;
+    line-height: 1.8;
+    font-size: 14px;
+    color: #174e65;
+}
+
+/* زر فهمت، أنا مستعد */
+#instructionsPage #readyBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    width: fit-content;
+    max-width: 100%;
+    margin: 24px auto 0;
+    padding: 13px 28px;
+
+    border: none;
+    border-radius: 50px;
+
+    background: linear-gradient(
+        135deg,
+        #176b78,
+        #234d70
+    );
+
+    color: #ffffff;
+    font-family: 'Cairo', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+#instructionsPage #readyBtn .button-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+#instructionsPage #readyBtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 9px 18px rgba(23, 107, 120, 0.2);
+}
+
+#instructionsPage #readyBtn:active {
+    transform: scale(0.96);
+}
+
+/* الشاشات الصغيرة */
+@media (max-width: 600px) {
+
+    #instructionsPage .instructions-card {
+        padding: 22px 15px;
+        border-radius: 22px;
+    }
+
+    .instructions-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 28px;
+    }
+
+    .game-info-grid {
+        gap: 7px;
+    }
+
+    .game-info-box {
+        padding: 12px 5px;
+    }
+
+    .game-info-box i {
+        font-size: 21px;
+    }
+
+    .game-info-box strong {
+        font-size: 13px;
+    }
+
+    .game-info-box span {
+        font-size: 10px;
+    }
+
+    #instructionsPage .rule {
+        padding: 11px;
+        gap: 10px;
+    }
+
+    #instructionsPage .rule > span {
+        width: 39px;
+        height: 39px;
+        font-size: 12px;
+    }
+
+    #instructionsPage .rule p {
+        font-size: 12px;
+    }
+
+    #instructionsPage #readyBtn {
+        font-size: 15px;
+        padding: 12px 22px;
+    }
+}
+
+/* تقليل الحركة عند الحاجة */
+@media (prefers-reduced-motion: reduce) {
+    .instructions-icon,
+    #instructionsPage .rule {
+        animation: none;
+    }
+
+    .game-info-box,
+    #instructionsPage #readyBtn {
+        transition: none;
+    }
+}
+
+
+/* =====================================
+   صورة السماعات في صفحة الاستماع
+===================================== */
+
+/* حاوية الصورة */
+#listeningPage .headphones-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    margin: 0 auto 18px;
+    padding: 0;
+
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* صورة السماعات */
+#listeningPage .headphones-image {
+    display: block;
+
+    width: 170px;
+    max-width: 55vw;
+    height: auto;
+
+    object-fit: contain;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+
+    filter: drop-shadow(
+        0 8px 12px rgba(80, 170, 210, 0.15)
+    );
+
+    animation: headphonesFloat 3s ease-in-out infinite;
+}
+
+/* حركة هادئة للسماعات */
+@keyframes headphonesFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+/* حجم السماعات على الجوال */
+@media (max-width: 600px) {
+    #listeningPage .headphones-image {
+        width: 135px;
+        max-width: 50vw;
+    }
+}
+
+/* إيقاف الحركة عند تفعيل تقليل الحركة */
+@media (prefers-reduced-motion: reduce) {
+    #listeningPage .headphones-image {
+        animation: none;
+    }
+}
+
+
+/* =====================================
+   صورة البازل في صفحة اختبار الذاكرة
+===================================== */
+
+/* حاوية صورة البازل */
+#memoryPage .memory-puzzle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    margin: 0 auto 18px;
+    padding: 0;
+
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* صورة البازل */
+#memoryPage .memory-puzzle-image {
+    display: block;
+
+    width: 155px;
+    max-width: 50vw;
+    height: auto;
+
+    object-fit: contain;
+
+    background: transparent;
+    border: none;
+    box-shadow: none;
+
+    filter: drop-shadow(
+        0 8px 12px rgba(80, 170, 210, 0.12)
+    );
+
+    animation: puzzleFloat 3s ease-in-out infinite;
+}
+
+/* حركة خفيفة للبازل */
+@keyframes puzzleFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+/* تصغير البازل على الجوال */
+@media (max-width: 600px) {
+    #memoryPage .memory-puzzle-image {
+        width: 125px;
+        max-width: 45vw;
+    }
+
+    #memoryPage .memory-puzzle-container {
+        margin-bottom: 12px;
+    }
+}
+
+/* احترام إعدادات تقليل الحركة */
+@media (prefers-reduced-motion: reduce) {
+    #memoryPage .memory-puzzle-image {
+        animation: none;
+    }
+}
+
+
+/* =====================================
+   صورة الكأس في صفحة النهاية
+===================================== */
+
+/* حاوية الكأس */
+#finalPage .final-trophy-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    margin: 0 auto 20px;
+    padding: 0;
+
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* صورة الكأس */
+#finalPage .final-trophy-image {
+    display: block;
+
+    width: 175px;
+    max-width: 55vw;
+    height: auto;
+
+    object-fit: contain;
+    background: transparent;
+
+    border: none;
+    box-shadow: none;
+
+    filter: drop-shadow(
+        0 10px 15px rgba(65, 160, 210, 0.16)
+    );
+
+    animation: trophyFloat 3s ease-in-out infinite;
+}
+
+/* حركة الكأس */
+@keyframes trophyFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+/* حركة عند ظهور صفحة النهاية */
+#finalPage:not(.hidden) .final-trophy-image {
+    animation:
+        trophyAppear 0.7s ease-out both,
+        trophyFloat 3s ease-in-out 0.7s infinite;
+}
+
+@keyframes trophyAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* حجم الكأس على الجوال */
+@media (max-width: 600px) {
+    #finalPage .final-trophy-image {
+        width: 145px;
+        max-width: 50vw;
+    }
+
+    #finalPage .final-trophy-container {
+        margin-bottom: 14px;
+    }
+}
+
+/* احترام إعداد تقليل الحركة */
+@media (prefers-reduced-motion: reduce) {
+    #finalPage .final-trophy-image,
+    #finalPage:not(.hidden) .final-trophy-image {
+        animation: none;
+    }
+}
+
+
+/* =====================================
+   الخلفية العامة لجميع صفحات اللعبة
+===================================== */
+
+body {
+    min-height: 100vh;
+
+    background-color: #f7fbff;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.35),
+            rgba(255, 255, 255, 0.35)
+        ),
+        url("images/background.png");
+
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* المحافظة على البطاقات البيضاء */
+#instructionsPage .instructions-card,
+.game-card {
+    background: rgba(255, 255, 255, 0.97);
+}
+
+/* تحسين الخلفية على الجوال */
+@media (max-width: 600px) {
+    body {
+        background-attachment: scroll;
+    }
+}
+
+
+/* خلفية الكمبيوتر */
+body {
+    background-image: url("images/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* خلفية الجوال */
+@media screen and (max-width: 768px) {
+    body {
+        background-image: url("images/background-mobile.png");
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+    }
+}
